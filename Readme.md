@@ -25,6 +25,7 @@ This project helped me practice Bash scripting, API integration, JSON parsing, c
 github-api/
 │
 ├── list_users.sh
+├── list_user_data
 └── README.md
 ```
 
