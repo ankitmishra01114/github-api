@@ -41,7 +41,21 @@ function list_users_with_read_access {
 	fi
 }
 
+
+# Function to print right way to execute the cmd args
+
+function helper {
+	expected_cmd_args=2
+	if [ $# -ne $expected_cmd_args ]; then
+		echo "Please execute the script with required cmd args"
+		echo "For Example: ./list-users.sh Repo_Owner Repo_Name"
+		exit 1
+	fi
+}
+
 # Main Script
+
+helper "$@"
 
 echo "Listing users with read access to ${Repo_Owner}/${Repo_Name}..."
 list_users_with_read_access
