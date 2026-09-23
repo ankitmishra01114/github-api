@@ -36,8 +36,8 @@ function list_users_with_read_access {
 	if [[ -z "$collaborators" ]]; then
 		echo "No Users with read access found for ${Repo_Owner}/${Repo_Name}."
 	else
-		echo "Users with read access found for ${Repo_Owner}/${Repo_Name}:"
-		echo "$collaborators"
+		echo "Users with read access found for ${Repo_Owner}/${Repo_Name}:" | tee -a list_user_data
+		echo "$collaborators" | tee -a list_user_data
 	fi
 }
 
